@@ -1,0 +1,7 @@
+table employees2
+type_spec strarray
+type_spec t_employee
+sequence employees2_seq
+procedure award_bonus
+package str
+package api_employee

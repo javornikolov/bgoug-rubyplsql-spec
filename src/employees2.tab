@@ -1,0 +1,11 @@
+create table employees2
+(
+   employee_id   number(15) not null,
+   first_name    varchar2(50),
+   last_name     varchar(50),
+   hire_date     date,
+   created_at    timestamp,
+   status        varchar2(1) default 'N',
+   commission_pct number,
+   salary         number(*,2)
+)
