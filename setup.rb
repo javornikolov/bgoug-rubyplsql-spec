@@ -11,9 +11,6 @@ module Setup
   end
 
   def show_errors(obj_name)
-    #    row = plsql.select_first(<<-SQL, plsql.schema_name, obj_name.upcase)
-    #      select * from all_errors where owner = :owner and name = :obj_name
-    #    SQL
     row = plsql.user_errors.all("where name = :obj_name", obj_name.upcase)
     puts row if row
   end
