@@ -27,6 +27,6 @@ describe "String Utils" do
   end
 
   it "can convert a string to uppercase" do
-    expect(plsql.str.up("horse")).to eq "HORSE"
+    expect(plsql.str.up(:ip_str => "horse")).to eq "HORSE"
   end
 end
