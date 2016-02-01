@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rake'
-gem 'rspec'
+# gem 'rspec'
 gem 'ruby-oci8'
 gem 'ruby-plsql-spec'
 # gem 'cucumber'
