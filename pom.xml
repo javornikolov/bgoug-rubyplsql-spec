@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>javornikolov</groupId>
+    <artifactId>bguoug-rubyplsql-spec</artifactId>
+    <version>1.0.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>ruby-plsql-spec maven runner</name>
+    <description>Maven target for running ruby-plsql-spec</description>
+
+    <repositories>
+
+        <repository>
+            <id>maven.oracle.com</id>
+            <releases><enabled>true</enabled></releases>
+            <url>https://maven.oracle.com</url>
+            <layout>default</layout>
+        </repository>
+
+        <repository>
+            <id>rubygems-release</id>
+            <url>http://rubygems-proxy.torquebox.org/releases</url>
+        </repository>
+
+    </repositories>
+
+    <pluginRepositories>
+
+        <pluginRepository>
+            <id>maven.oracle.com</id>
+            <url>https://maven.oracle.com</url>
+        </pluginRepository>
+
+    </pluginRepositories>
+
+    <build>
+
+        <plugins>
+
+            <plugin>
+                <groupId>de.saumya.mojo</groupId>
+                <artifactId>gem-maven-plugin</artifactId>
+                <version>1.1.5</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>initialize</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>de.saumya.mojo</groupId>
+                <artifactId>rake-maven-plugin</artifactId>
+                <version>1.1.5</version>
+                <executions>
+                    <execution>
+                        <id>run-spec</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>rake</goal>
+                        </goals>
+                        <configuration>
+                            <args>default</args>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency><groupId>com.oracle.jdbc</groupId><artifactId>ojdbc7</artifactId><version>12.1.0.2</version></dependency>
+        <dependency><groupId>org.jruby</groupId><artifactId>jruby-complete</artifactId><version>9.1.5.0</version></dependency>
+        <dependency><groupId>rubygems</groupId><artifactId>rake</artifactId><version>11.2.2</version><type>gem</type></dependency>
+        <dependency><groupId>rubygems</groupId><artifactId>rspec</artifactId><version>3.5.0</version><type>gem</type></dependency>
+        <dependency><groupId>rubygems</groupId><artifactId>rspec-core</artifactId><version>3.5.3</version><type>gem</type></dependency>
+        <dependency><groupId>rubygems</groupId><artifactId>ruby-plsql</artifactId><version>0.6.0</version><type>gem</type></dependency>
+        <dependency><groupId>rubygems</groupId><artifactId>ruby-plsql-spec</artifactId><version>0.5.0</version><type>gem</type></dependency>
+    </dependencies>
+</project>
