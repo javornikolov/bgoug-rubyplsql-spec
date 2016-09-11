@@ -23,6 +23,17 @@ To run it:
    ```
  * To trigger the build & tests when files are changed (monitored paths are configured in [Guardfile](Guardfile) - you can run `guard`
 
+### Running with maven
+A pom.xml example is provided for running the project using Maven and JRuby (how to setup Maven may be found elsewhere).
+
+ * You need to [register for the Oracle Maven Repository](https://blogs.oracle.com/dev2dev/entry/oracle_maven_repository_instructions_for) - in order to resolve Oracle JDBC driver dependencies.
+ * In spec/database.yml you should prefix database name with slash (/) in case you're using connection by host:pord/service-name (instead of host:pord:SID)
+ * From the project directory run
+
+ ``` bash
+ mvn verify
+ ```
+
 ### Setup and configuration files
 
  * [Gemfile](Gemfile) - dependencies

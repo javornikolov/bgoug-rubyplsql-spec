@@ -2,8 +2,8 @@ module Setup
   def script(filename)
     puts "[setup] #{filename}"
     plsql.execute File.read(filename)
-  rescue OCIError
-    if $!.code == 955
+  rescue => err
+    if err.message =~ /955/
       puts "   skipping #{filename} - already exists"
     else
       raise
