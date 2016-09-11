@@ -14,7 +14,7 @@ It's about unit testing and TDD using Ruby, RSpec, ruby-plsql and ruby-plsql-spe
 To run it:
  * Install Ruby
  * Setup your test schema: you may use `setup_test_user.sql` for the purpose
- * Copy `spec/database.yml.sample` to `spec/database/.yml`. Modify accordingly
+ * Copy `spec/database.yml.sample` to `spec/database.yml`. Modify accordingly
  * From the project directory run
 
    ``` bash
